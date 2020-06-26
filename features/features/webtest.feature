@@ -9,4 +9,4 @@ Feature: Search on Google
 @google @pass @browser
 Scenario: Search for Gamma on Google
 	Given I visit "https://www.google.co.uk/"
-	Then the text "gamma" is displayed on the page
+	Then the text "Terms" is displayed on the page
