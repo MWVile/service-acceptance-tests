@@ -22,11 +22,3 @@
 
 # Default webdriver to use. String converted to Symbol
 DRIVER = ENV['DRIVER'].to_sym
-
-# BrowserStack env vars
-BS_USERNAME = ENV['BS_USERNAME']
-BS_ACCESS_KEY = ENV['BS_ACCESS_KEY']
-BS_PROJECT = ENV['BS_PROJECT']
-BS_BUILD = ENV['BS_BUILD']
-BS_SERVER = ENV['BS_SERVER']
-BS_CONFIG = ENV['BS_CONFIG']
