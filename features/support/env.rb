@@ -8,17 +8,21 @@
 # c. export commands within the run_tests.sh file.
 # Additional shell scripts could be added for other test environments
 # where you wish to run the tests from your PC
-# 2. Global variables with $ should not be declared anywhere else but here
 
-# Frontend(s)/UI's
-# $SERVICE_UI_DOMAIN = ENV['SERVICE_UI_DOMAIN']
-
-# API(s)
-# $SERVICE_API_DOMAIN = ENV['SERVICE_API_DOMAIN']
-# $SERVICE_API_VERSION = ENV['SERVICE_API_VERSION']
-
-# Test Fixture(s)
-# $JENKINS_WORK SPACE = ENV['JENKINS_WORKSPACE']
-
-# Default webdriver to use. String converted to Symbol
-DRIVER = ENV['DRIVER'].to_sym
+class Env
+  def self.flask_skeletonxl_api_url
+    (ENV['FLASK_SKELETONXL_API_URL'] || 'http://flask-skeletonxl-api')
+  end
+  def self.flask_skeletonxl_ui_url
+    (ENV['FLASK_SKELETONXL_UI_URL'] || 'http://flask-skeletonxl-ui')
+  end
+  def self.kombu_skeletonxl_client_url
+    (ENV['KOMBU_SKELETONXL_CLIENT_URL'] || 'http://kombu-skeletonxl-client')
+  end
+  def self.sb_jaxrs_skeletonxl_api_url
+    (ENV['SPRINGBOOT_JAXRS_SKELETONXL_API_URL'] || 'http://springboot-jaxrs-skeletonxl-api')
+  end
+  def self.sb_mvc_skeletonxl_api_url
+    (ENV['SPRINGBOOT_MVC_SKELETONXL_API_URL'] || 'http://springboot-mvc-skeletonxl-api')
+  end
+end
