@@ -10,6 +10,9 @@
 # where you wish to run the tests from your PC
 
 class Env
+  def self.driver
+    (ENV['DRIVER'] || 'chrome').to_sym
+  end
   def self.flask_skeletonxl_api_url
     (ENV['FLASK_SKELETONXL_API_URL'] || 'http://flask-skeletonxl-api')
   end
