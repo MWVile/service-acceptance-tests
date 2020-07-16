@@ -8,5 +8,13 @@ Feature: Search on Google
 
 @google @pass @browser
 Scenario: Search for Gamma on Google
-	Given I visit "https://www.google.co.uk/"
-	Then the text "Terms" is displayed on the page
+	Given I visit Awesomeness UI
+	Then the text "Awesomeness" is displayed on the page
+
+  @google @pass @browser
+  Scenario: Search for Gamma on Google
+  	Given I visit Awesomeness UI
+    When I enter the first name of "Fred"
+    And I enter the surname name of "Bloggs"
+    And I click continue
+  	Then the text "just now" is displayed on the page
