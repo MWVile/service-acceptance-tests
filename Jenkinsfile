@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-def library = library identifier: 'jenkins-pipelines@feature/Cucumber-Ruby-test-pipeline', retriever: modernSCM(
+def library = library identifier: 'jenkins-pipelines@master', retriever: modernSCM(
         [$class: 'GitSCMSource',
          remote: 'http://192.168.249.38/common-code/jenkins-pipelines.git'])
 
