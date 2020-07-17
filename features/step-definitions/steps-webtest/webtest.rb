@@ -25,16 +25,21 @@ end
 
 
 Given('I check Awesomeness UI') do ||
-  printf('debug')
-  printf(Env.flask_skeletonxl_ui_url)
-  printf(ENV['FLASK_SKELETONXL_UI_URL'])
-  url = URI.parse(Env.flask_skeletonxl_ui_url)
-  req = Net::HTTP.new(url.host, url.port)
-  if url.path == ""
-    url.path = "/"
-  end
-  req.use_ssl = true
-  res = req.request_head(url.path)
-  expect(res.code).to eq("200")
+  code = curl_http_url_return_http_code(Env.flask_skeletonxl_ui_url)
+  expect(code).to eq("200")
+end
 
+Given('I check Awesomeness API') do ||
+  code = curl_http_url_return_http_code(Env.flask_skeletonxl_api_url)
+  expect(code).to eq("200")
+end
+
+Given('I check Awesomeness Jaxrs') do ||
+  code = curl_http_url_return_http_code(Env.sb_jaxrs_skeletonxl_api_url)
+  expect(code).to eq("200")
+end
+
+Given('I check Awesomeness SB MVC') do ||
+  code = curl_http_url_return_http_code(Env.sb_mvc_skeletonxl_api_url)
+  expect(code).to eq("200")
 end

@@ -19,9 +19,6 @@ class Env
   def self.flask_skeletonxl_ui_url
     (ENV['FLASK_SKELETONXL_UI_URL'] || 'http://flask-skeletonxl-ui')
   end
-  def self.kombu_skeletonxl_client_url
-    (ENV['KOMBU_SKELETONXL_CLIENT_URL'] || 'http://kombu-skeletonxl-client')
-  end
   def self.sb_jaxrs_skeletonxl_api_url
     (ENV['SPRINGBOOT_JAXRS_SKELETONXL_API_URL'] || 'http://springboot-jaxrs-skeletonxl-api')
   end

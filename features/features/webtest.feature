@@ -15,5 +15,17 @@ Feature: Awesomeness
   # 	Then the text "just now" is displayed on the page
 
   @google @pass @browser
-  Scenario: visit Awesomeness
+  Scenario: visit Awesomeness UI
   	Given I check Awesomeness UI
+
+  @google @pass @browser
+  Scenario: visit Awesomeness API
+  	Given I check Awesomeness API
+
+  @google @pass @browser
+  Scenario: visit Awesomeness Jaxrs
+  	Given I check Awesomeness Jaxrs
+
+  @google @pass @browser
+  Scenario: visit Awesomeness SB MVC
+  	Given I check Awesomeness SB MVC
