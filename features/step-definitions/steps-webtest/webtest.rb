@@ -3,7 +3,7 @@
 # Use Capybara "Visit" method to visit the webpage
 # provided by the "path" variable
 Given('I visit Awesomeness UI') do ||
-  visit(ENV['FLASK_SKELETONXL_UI_URL'])
+  visit(Env.flask_skeletonxl_ui_url)
 end
 Then('the text {string} is displayed on the page') do |search_text|
   # Use RSPEC assertion to make sure text from variable 'search_text'
