@@ -22,3 +22,16 @@ end
 When("I click continue") do
   click_button('submit_button')
 end
+
+
+Given('I check Awesomeness UI ') do ||
+
+  url = URI.parse(ENV['FLASK_SKELETONXL_UI_URL'])
+  req = Net::HTTP.new(url.host, url.port)
+  if url.path == ""
+    url.path = "/"
+  end
+  res = req.request_head(url.path)
+  return res.code
+
+end
