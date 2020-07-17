@@ -33,7 +33,7 @@ Given('I check Awesomeness UI') do ||
   if url.path == ""
     url.path = "/"
   end
-  # req.use_ssl = true
+  req.use_ssl = true
   res = req.request_head(url.path)
   expect(res.code).to eq("200")
 
