@@ -25,6 +25,7 @@ end
 
 
 Given('I check Awesomeness UI') do ||
+  printf(Env.flask_skeletonxl_ui_url)
   url = URI.parse(Env.flask_skeletonxl_ui_url)
   req = Net::HTTP.new(url.host, url.port)
   req.use_ssl = true
