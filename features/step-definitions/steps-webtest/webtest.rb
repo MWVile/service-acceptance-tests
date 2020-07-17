@@ -31,15 +31,15 @@ end
 
 Given('I check Awesomeness API') do ||
   code = curl_http_url_return_http_code(Env.flask_skeletonxl_api_url)
-  expect(code).to eq("200")
+  expect(code).to eq("503")
 end
 
 Given('I check Awesomeness Jaxrs') do ||
   code = curl_http_url_return_http_code(Env.sb_jaxrs_skeletonxl_api_url)
-  expect(code).to eq("200")
+  expect(code).to eq("503")
 end
 
 Given('I check Awesomeness SB MVC') do ||
   code = curl_http_url_return_http_code(Env.sb_mvc_skeletonxl_api_url)
-  expect(code).to eq("200")
+  expect(code).to eq("503")
 end
