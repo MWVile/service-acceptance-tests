@@ -1,4 +1,4 @@
-FROM hmlandregistry/dev_base_ruby:4
+FROM hmlandregistry/dev_base_ruby:4.1
 
 WORKDIR /src
 
