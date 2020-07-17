@@ -9,11 +9,11 @@ assert_in_environment CORE_NAMESPACE
 assert_in_environment PRIVATE_NAMESPACE
 assert_in_environment PUBLIC_NAMESPACE
 
-export_if_unset FLASK_SKELETONXL_API_URL "http://${HELM_RELEASE}-flask-skeletonxl-api-${CORE_NAMESPACE}.${CORE_CLUSTER_DOMAIN}"
+export_if_unset FLASK_SKELETONXL_API_URL "https://${HELM_RELEASE}-flask-skeletonxl-api-${CORE_NAMESPACE}.${CORE_CLUSTER_DOMAIN}"
 export_if_unset FLASK_SKELETONXL_UI_URL "https://${HELM_RELEASE}-flask-skeletonxl-ui-${PUBLIC_NAMESPACE}.${INTERNAL_CLUSTER_DOMAIN}"
 export_if_unset KOMBU_SKELETONXL_CLIENT_URL "http://${HELM_RELEASE}-kombu-skeletonxl-client-${PRIVATE_NAMESPACE}.${INTERNAL_CLUSTER_DOMAIN}"
-export_if_unset SPRINGBOOT_JAXRS_SKELETONXL_API_URL "http://${HELM_RELEASE}-springboot-jaxrs-skeletonxl-api-${CORE_NAMESPACE}.${CORE_CLUSTER_DOMAIN}/api"
-export_if_unset SPRINGBOOT_MVC_SKELETONXL_API_URL "http://${HELM_RELEASE}-springboot-mvc-skeletonxl-api-${PRIVATE_NAMESPACE}.${INTERNAL_CLUSTER_DOMAIN}"
+export_if_unset SPRINGBOOT_JAXRS_SKELETONXL_API_URL "https://${HELM_RELEASE}-springboot-jaxrs-skeletonxl-api-${CORE_NAMESPACE}.${CORE_CLUSTER_DOMAIN}/api"
+export_if_unset SPRINGBOOT_MVC_SKELETONXL_API_URL "https://${HELM_RELEASE}-springboot-mvc-skeletonxl-api-${PRIVATE_NAMESPACE}.${INTERNAL_CLUSTER_DOMAIN}"
 
 export_if_unset CORE_POSTGRES_HOST "${HELM_RELEASE}-postgres.${CORE_NAMESPACE}.svc"
 export_if_unset CORE_POSTGRES_USERNAME postgres
