@@ -24,14 +24,11 @@ When("I click continue") do
 end
 
 
-Given('I check Awesomeness UI ') do ||
-
+Given('I check Awesomeness UI') do ||
   url = URI.parse(ENV['FLASK_SKELETONXL_UI_URL'])
   req = Net::HTTP.new(url.host, url.port)
-  if url.path == ""
-    url.path = "/"
-  end
+  req.use_ssl = true
   res = req.request_head(url.path)
-  return res.code
+  expect(res.code).to eq("200")
 
 end
