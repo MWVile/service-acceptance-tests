@@ -28,10 +28,10 @@ Given('I check Awesomeness UI') do ||
   printf('debug')
   printf(Env.flask_skeletonxl_ui_url)
   printf(ENV['FLASK_SKELETONXL_UI_URL'])
-  # url = URI.parse(Env.flask_skeletonxl_ui_url)
-  # req = Net::HTTP.new(url.host, url.port)
+  url = URI.parse(Env.flask_skeletonxl_ui_url)
+  req = Net::HTTP.new(url.host, url.port)
   # req.use_ssl = true
-  # res = req.request_head(url.path)
-  # expect(res.code).to eq("200")
+  res = req.request_head(url.path)
+  expect(res.code).to eq("200")
 
 end
