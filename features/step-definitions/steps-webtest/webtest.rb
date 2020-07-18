@@ -25,21 +25,21 @@ end
 
 
 Given('I check Awesomeness UI') do ||
-  code = curl_http_url_return_http_code(Env.flask_skeletonxl_ui_url)
+  code = http_get_response_code(Env.flask_skeletonxl_ui_url + '/health')
   expect(code).to eq("200")
 end
 
 Given('I check Awesomeness API') do ||
-  code = curl_http_url_return_http_code(Env.flask_skeletonxl_api_url)
-  expect(code).to eq("503")
+  code = http_get_response_code(Env.flask_skeletonxl_api_url + '/health')
+  expect(code).to eq("200")
 end
 
 Given('I check Awesomeness Jaxrs') do ||
-  code = curl_http_url_return_http_code(Env.sb_jaxrs_skeletonxl_api_url)
-  expect(code).to eq("503")
+  code = http_get_response_code(Env.sb_jaxrs_skeletonxl_api_url + '/actuator/health')
+  expect(code).to eq("200")
 end
 
 Given('I check Awesomeness SB MVC') do ||
-  code = curl_http_url_return_http_code(Env.sb_mvc_skeletonxl_api_url)
-  expect(code).to eq("503")
+  code = http_get_response_code(Env.sb_mvc_skeletonxl_api_url + '/actuator/health')
+  expect(code).to eq("200")
 end

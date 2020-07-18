@@ -1,10 +1,8 @@
-def curl_http_url_return_http_code(check_url)
+def http_get_response_code(check_url)
   url = URI.parse(check_url)
   req = Net::HTTP.new(url.host, url.port)
-  if url.path == ""
-    url.path = "/"
-  end
-  req.use_ssl = true
-  res = req.request_head(url.path)
+  url.path = "/" if url.path == ""
+  req.use_ssl = true if url.scheme == 'https'
+  res = req.request_get(url.path)
   return res.code
 end
