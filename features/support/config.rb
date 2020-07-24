@@ -17,57 +17,30 @@ World(Test::Unit::Assertions)
 World(Capybara::DSL)
 
 # Defaults
-# Capybara.default_selector = :id
-# Capybara.default_max_wait_time = 10
-# Capybara.app_host = 'http://localhost:4567'
-# Capybara.default_driver = Env.driver
-# Capybara.javascript_driver = Env.driver
-#
-# # Screenshot settings
-# Capybara.save_path = './screenshots/'
-# Capybara::Screenshot.prune_strategy = :keep_last_run
-#
-# # Screenshot driver
-# Capybara::Screenshot.register_driver(Env.driver) do |driver, path|
-#   driver.browser.save_screenshot(path)
-# end
-#
-# # Headless Chrome
-# Capybara.register_driver :chrome do |app|
-#   options = Selenium::WebDriver::Chrome::Options.new
-#   options.add_argument('no-sandbox')
-#   options.add_argument('headless')
-#   options.add_argument('disable-gpu')
-#   options.add_argument('window-size=1920,1080')
-#   options.add_argument('disable-dev-shm-usage')
-#
-#   Capybara::Selenium::Driver.new(app,
-#                                  browser: :chrome,
-#                                  options: options)
-# end
-
-
-
-
-
-# Defaults
 Capybara.default_selector = :id
 Capybara.default_max_wait_time = 10
+Capybara.app_host = 'http://localhost:4567'
 Capybara.default_driver = :chrome
 Capybara.javascript_driver = :chrome
-Capybara.test_id = 'data-testid'
 
 # Screenshot settings
 Capybara::Screenshot.prune_strategy = :keep_last_run
-Capybara::Screenshot.autosave_on_failure = false
+
+# Screenshot driver for :chrome
+Capybara::Screenshot.register_driver(:chrome) do |driver, path|
+  driver.browser.save_screenshot(path)
+end
 
 # Headless Chrome
 Capybara.register_driver :chrome do |app|
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: { args: %w[headless disable-gpu no-sandbox window-size=1920,1080 disable-dev-shm-usage] }
-  )
+  options = Selenium::WebDriver::Chrome::Options.new
+  options.add_argument('no-sandbox')
+  options.add_argument('headless')
+  options.add_argument('disable-gpu')
+  options.add_argument('window-size=1920,1080')
+  options.add_argument('disable-dev-shm-usage')
 
   Capybara::Selenium::Driver.new(app,
                                  browser: :chrome,
-                                 desired_capabilities: capabilities)
+                                 options: options)
 end
