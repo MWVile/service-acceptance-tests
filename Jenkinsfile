@@ -5,4 +5,6 @@ import static uk.gov.landregistry.jenkins.pipeline.ClosureUtils.cucumberRubyPipe
 cucumberRubyPipeline cucumberRubyPipelineConfig {
   environmentFile './env-openshift.sh'
   defaultNamespace 'skeletonsxl'
+  
+  slackChannel 'C1LTTTTLZ'
 }
