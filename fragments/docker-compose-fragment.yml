@@ -5,8 +5,12 @@ services:
   # No log redirect, no port, no restart policy.
   skeletonsxl-acceptance-tests:
     container_name: skeletonsxl-acceptance-tests
-    build: ./skeletonsxl-acceptance-tests
-
+    build:
+      context: ./skeletonsxl-acceptance-tests
+      # To allow a matching user to the user running the dev env to be created for running the container
+      args:
+        - OUTSIDE_UID=${OUTSIDE_UID}
+        - OUTSIDE_GID=${OUTSIDE_GID}
     volumes:
       # Our convention is to always map the app files to /src within the container
       - ./skeletonsxl-acceptance-tests:/src
