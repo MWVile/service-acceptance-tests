@@ -3,7 +3,7 @@
 # Use Capybara "Visit" method to visit the webpage
 # provided by the "path" variable
 Given('I visit Awesomeness UI') do
-  visit(Env.flask_skeletonxl_ui_url + '/awesomeness')
+  visit("#{Env.flask_skeletonxl_ui_url}/awesomeness")
 end
 
 Given('I visit automation training UI') do
@@ -29,21 +29,21 @@ When('I click continue') do
 end
 
 Given('I check Awesomeness UI') do
-  code = http_get_response_code(Env.flask_skeletonxl_ui_url + '/health')
+  code = http_get_response_code("#{Env.flask_skeletonxl_ui_url}/health")
   expect(code).to eq('200')
 end
 
 Given('I check Awesomeness API') do
-  code = http_get_response_code(Env.flask_skeletonxl_api_url + '/health')
+  code = http_get_response_code("#{Env.flask_skeletonxl_api_url}/health")
   expect(code).to eq('200')
 end
 
 Given('I check Awesomeness Jaxrs') do
-  code = http_get_response_code(Env.sb_jaxrs_skeletonxl_api_url + '/actuator/health')
+  code = http_get_response_code("#{Env.sb_jaxrs_skeletonxl_api_url}/actuator/health")
   expect(code).to eq('200')
 end
 
 Given('I check Awesomeness SB MVC') do
-  code = http_get_response_code(Env.sb_mvc_skeletonxl_api_url + '/actuator/health')
+  code = http_get_response_code("#{Env.sb_mvc_skeletonxl_api_url}/actuator/health")
   expect(code).to eq('200')
 end
