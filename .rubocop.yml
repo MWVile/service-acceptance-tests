@@ -2,6 +2,10 @@ AllCops:
 
   TargetRubyVersion: 2.5
 
+  Exclude:
+  - 'Vagrantfile'
+  
+
 Metrics/LineLength:
   Max: 120
 

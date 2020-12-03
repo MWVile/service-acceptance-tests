@@ -2,6 +2,11 @@
 Feature: Awesomeness
   
   @google @pass @browser @ui
+  Scenario: visit automation training
+  	Given I visit automation training UI
+  	Then the text "Automate an application" is displayed on the page
+
+  @google @pass @browser @ui
   Scenario: visit Awesomeness
   	Given I visit Awesomeness UI
   	Then the text "Awesomeness" is displayed on the page

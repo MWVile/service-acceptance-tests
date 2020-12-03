@@ -13,15 +13,19 @@ class Env
   def self.driver
     (ENV['DRIVER'] || 'chrome').to_sym
   end
+
   def self.flask_skeletonxl_api_url
     (ENV['FLASK_SKELETONXL_API_URL'] || 'http://flask-skeletonxl-api')
   end
+
   def self.flask_skeletonxl_ui_url
     (ENV['FLASK_SKELETONXL_UI_URL'] || 'http://flask-skeletonxl-ui')
   end
+
   def self.sb_jaxrs_skeletonxl_api_url
     (ENV['SPRINGBOOT_JAXRS_SKELETONXL_API_URL'] || 'http://springboot-jaxrs-skeletonxl-api')
   end
+
   def self.sb_mvc_skeletonxl_api_url
     (ENV['SPRINGBOOT_MVC_SKELETONXL_API_URL'] || 'http://springboot-mvc-skeletonxl-api')
   end
