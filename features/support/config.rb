@@ -13,6 +13,7 @@ require 'capybara-screenshot/cucumber'
 require 'net/http/post/multipart'
 require 'selenium/webdriver'
 require 'pry'
+require 'db2_command'
 
 World(Test::Unit::Assertions)
 World(Capybara::DSL)

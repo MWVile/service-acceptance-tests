@@ -1,6 +1,6 @@
-![Ruby](https://github.com/LandRegistry/skeleton-acceptance-tests/workflows/Ruby/badge.svg?branch=master)
+![Ruby](https://git.dev.ctp.local/skeletonsxl/skeletonsxl-acceptance-tests)
 
-# Skeleton Acceptance Tests
+# Skeleton STP Acceptance Tests
 
 This repository is a Skeleton to run Cucumber acceptance tests (with [Ruby][1] and [Selenium][2]), as part of the Land Registry [common-dev-env][3].
 This skeleton includes sample tests to verify the basic behaviour of the skeleton, but these are not intended as standards to follow.
@@ -11,10 +11,9 @@ Any approaches built with this skeleton should fulfil your specific needs.
 * The gems used for the acceptance tests are contained within the `Gemfile`
 * The `Gemfile.lock` provided contains working gem dependencies.
 * [Ruby Style Guide][4] will provide examples and explanations for linting violations
-* The [docker-base-image v4.1][5] is used to build this skeleton and currently uses:
-    * Ruby version: 2.6.5
-    * Rubygems version: 3.0.6
-    * Bundler version: 2.0.2
+* The standard STP uses docker.devops.stp.hmlr.zone/stp/ruby26-chrome:latest:
+    * Ruby version: 2.6.6
+    * Bundler version: 1.17.2
 * `support/config.rb` has the skeleton default values and driver configuration
 
 ## Architecture
@@ -62,9 +61,9 @@ If you are already familiar with the [common-dev-env][3] and have an existing de
 you can add the skeleton into your`configuration.yml`.
 
 ```yaml
-  skeleton-acceptance-tests:
-    repo: git@github.com:LandRegistry/skeleton-acceptance-tests.git
-    branch: master
+   skeletonsxl-acceptance-tests:
+     repo: git@192.168.249.38:skeletonsxl/skeletonsxl-acceptance-tests.git
+     branch: master
 ```
 
 ## Quick Start
@@ -83,26 +82,26 @@ But defer to the dev-env documentation as the source of truth, in the event of c
 
 ```shell
 # Use common-dev-env alias to execute run_tests.sh within the docker container
-acctest skeleton-acceptance-tests
+acctest skeletonsxl-acceptance-tests
 ```
 
 ```shell
 # or use the full command without the common-dev-env alias
-docker-compose run --rm skeleton-acceptance-tests sh run_tests.sh
+docker-compose run --rm skeletonsxl-acceptance-tests sh run_tests.sh
 ```
 
  ```shell
 # To run only tests with specific tags:
-acctest skeleton-acceptance-tests --tags "@run_me"
+acctest skeletonsxl-acceptance-tests --tags "@run_me"
 ```
  ```shell
 # To exclude tests based on tags use "not"
-acctest skeleton-acceptance-tests --tags "not @dont_run_me"
+acctest skeletonsxl-acceptance-tests --tags "not @dont_run_me"
 ```
 
 ```shell
 # This can be comibined to run some tags, while excluding others
-acctest skeleton-acceptance-tests --tags "@included_tag and not @excluded_tag"
+acctest skeletonsxl-acceptance-tests --tags "@included_tag and not @excluded_tag"
 ```
 
 ## Rubocop
@@ -115,17 +114,17 @@ acctest skeleton-acceptance-tests --tags "@included_tag and not @excluded_tag"
 
 ```shell
 # Use common-dev-env alias to execute run_linting.sh within the docker container
-acclint skeleton-acceptance-tests
+acclint skeletonsxl-acceptance-tests
 ```
 which is equivalent to
 
 ```shell
-docker-compose run --rm skeleton-acceptance-tests sh run_linting.sh
+docker-compose run --rm skeletonsxl-acceptance-tests sh run_linting.sh
 ```
 
 Rubocop can attempt to automatically fix any linting issues in your code using the flag `-a`.
 ```shell
-docker-compose run --rm skeleton-acceptance-tests rubocop -a
+docker-compose run --rm skeletonsxl-acceptance-tests rubocop -a
 ```
 Use this with caution. It can break your code.
 
@@ -133,7 +132,7 @@ It's better to use this at file or folder level, rather than suite level.
 Rubocop can be used to lint a single file, rather than the whole codebase
 
 ```shell
-docker-compose run --rm skeleton-acceptance-tests rubocop -a {path to your code}
+docker-compose run --rm skeletonsxl-acceptance-tests rubocop -a {path to your code}
 ```
 
 ## Automated Accessibility Checks (Axe)
@@ -156,7 +155,7 @@ This scenario should only navigate to the page you want to test, and get it into
 3. Run all tests tagged with `@axe`
 You can use any the standard dev-env methods to do this.
 
-e.g. `acctest skeleton-acceptance-tests --tags @axe`
+e.g. `acctest skeletonsxl-acceptance-tests --tags @axe`
 
 ## BrowserStack
 Tests can be run remotely on BrowserStack servers as part of your testing.
@@ -182,7 +181,7 @@ It will also out put a `report_[config_name].json` file for each run configurati
 
 The script can be called with:
 ```shell
-run skeleton-acceptance-tests ./run_browserstack.sh
+run skeletonsxl-acceptance-tests ./run_browserstack.sh
 ```
 
 It's aimed to provide a simple way to run tagged scenarios through different configurations.
@@ -206,10 +205,10 @@ ENV BS_BUILD '001'
 ENV BS_CONFIG 'mac_safari12'
 
 # rebuild container to apply changes
-rebuild skeleton-acceptance-tests
+rebuild skeletonsxl-acceptance-tests
 
 # Run my tests against browserstack
-acctest skeleton-acceptance-tests --tags @safari_example
+acctest skeletonsxl-acceptance-tests --tags @safari_example
 Console  messages ...
 ```
 
@@ -236,9 +235,8 @@ This details the configuration of ruby. Any libraries used must be required here
 [2]: https://www.seleniumhq.org/projects/webdriver/
 [3]: https://github.com/LandRegistry/common-dev-env
 [4]: https://github.com/rubocop-hq/ruby-style-guide
-[5]: https://github.com/LandRegistry/docker-base-images/blob/master/dev_base_ruby/4.1/Dockerfile
 [6]: https://github.com/teamcapybara/capybara
 [7]: http://chromedriver.chromium.org/
 [8]: https://cucumber.io/docs
-[9]: https://github.com/aaronFlynn/acctest-dev-env-config
+[9]: https://git.dev.ctp.local/skeletonsxl/dev-env-config
 

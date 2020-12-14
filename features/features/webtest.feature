@@ -34,3 +34,4 @@ Feature: Awesomeness
   @google @pass @browser @springmvcapi
   Scenario: visit Awesomeness SB MVC
   	Given I check Awesomeness SB MVC
+    

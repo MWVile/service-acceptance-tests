@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Required gem source - RubyGems server
-source 'http://rubygems.org'
+source 'https://nexus.devops.stp.hmlr.zone/repository/ruby/'
 
 # List of gems needed and their versions
 # not supplying versions gives the risk of updates breaking tests
@@ -19,3 +19,4 @@ gem 'rubocop'
 gem 'rubocop-performance'
 gem 'selenium-webdriver'
 gem 'test-unit'
+gem 'db2-command', '0.0.2'

@@ -1,5 +1,5 @@
 # We're using the same Ruby image the Pipeline uses to run the tests on STP
-FROM docker.devops.stp.hmlr.zone/stp/ruby27-chrome:latest
+FROM docker.devops.stp.hmlr.zone/stp/ruby26-chrome:latest
 
 WORKDIR /src
 
