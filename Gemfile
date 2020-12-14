@@ -1,20 +1,22 @@
 # frozen_string_literal: true
 
 # Required gem source - RubyGems server
-source 'http://rubygems.org'
+source 'https://nexus.devops.stp.hmlr.zone/repository/ruby/'
 
 # List of gems needed and their versions
 # not supplying versions gives the risk of updates breaking tests
 # Patch versions (the z in x.y.z) are ok though, just bug fixes, so we allow
 # them to be upgraded implicitly
-gem 'axe-matchers', '~> 2.4.1'
-gem 'browserstack-local', '~> 1.3.0'
-gem 'capybara', '~> 3.29.0'
-gem 'capybara-screenshot', '~> 1.0.23'
-gem 'cucumber', '~> 3.1.2'
-gem 'multipart-post', '~> 2.1.1'
-gem 'rspec', '~> 3.9.0'
-gem 'rubocop', '~> 0.75.0'
-gem 'rubocop-performance', '~> 1.5.0'
-gem 'selenium-webdriver', '3.142.6'
-gem 'test-unit', '~> 3.3.4'
+gem 'axe-matchers'
+gem 'browserstack-local'
+gem 'capybara'
+gem 'capybara-screenshot'
+gem 'cucumber', '~> 3.2'
+gem 'multipart-post'
+gem 'pry'
+gem 'rspec'
+gem 'rubocop'
+gem 'rubocop-performance'
+gem 'selenium-webdriver'
+gem 'test-unit'
+gem 'db2-command', '0.0.2'

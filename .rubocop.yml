@@ -1,8 +1,12 @@
 AllCops:
 
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.7
+  NewCops: disable
+  Exclude:
+  - 'Vagrantfile'
+  
 
-Metrics/LineLength:
+Layout:
   Max: 120
 
 Metrics/MethodLength:
