@@ -15,5 +15,5 @@ USER containeruser
 
 # Preinstall gems into the image, as tests run in new containers each time
 # you don't want to be constantly reinstalling them on each run
-ADD Gemfile* /src/
+COPY --chown=$OUTSIDE_UID:$OUTSIDE_GID Gemfile* /src/
 RUN bundle install
