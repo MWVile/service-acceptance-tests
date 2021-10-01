@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  # Notice how the service name, container name and repo directory (where the Dockerfile lives) all match.
+  # As this is a ruby acceptance tests app, it is not designed to run always, just ad hoc commands to run the tests.
+  # No log redirect, no port, no restart policy.
+  skeletonsxl-acceptance-tests:
+    container_name: skeletonsxl-acceptance-tests
+    build:
+      context: ./skeletonsxl-acceptance-tests
+      # To allow a matching user to the user running the dev env to be created for running the container
+      args:
+        - OUTSIDE_UID=${OUTSIDE_UID}
+        - OUTSIDE_GID=${OUTSIDE_GID}
+    volumes:
+      # Our convention is to always map the app files to /src within the container
+      - ./skeletonsxl-acceptance-tests:/src
