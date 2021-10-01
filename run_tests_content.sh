@@ -3,7 +3,8 @@ source env-devenvrun.sh
 
 # installs the gems listed in Gemfile
 # Useful if run outside of a Docker environment
-bundle install
+bundle config timeout 30 && \
+ NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 12
 
 # Calls the linting script
 sh run_linting.sh
