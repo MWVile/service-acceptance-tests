@@ -44,7 +44,7 @@ Capybara.register_driver :chrome do |app|
   options.add_argument('disable-dev-shm-usage')
   options.add_argument('ignore-certificate-errors')
 
-  Capybara::Selenium::Driver.new(app,
+ Capybara::Selenium::Driver.new(app,
                                  browser: :chrome,
                                  options: options)
 end
