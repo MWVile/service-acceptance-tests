@@ -11,9 +11,9 @@ Any approaches built with this skeleton should fulfil your specific needs.
 * The gems used for the acceptance tests are contained within the `Gemfile`
 * The `Gemfile.lock` provided contains working gem dependencies.
 * [Ruby Style Guide][4] will provide examples and explanations for linting violations
-* The standard STP uses docker.devops.stp.hmlr.zone/stp/ruby26-chrome:latest:
-    * Ruby version: 2.6.6
-    * Bundler version: 1.17.2
+* The standard STP uses docker.devops.stp.hmlr.zone/stp/ruby30-chrome:test
+    * Ruby version: 3.0.0
+    * Bundler version: 2.2.22
 * `support/config.rb` has the skeleton default values and driver configuration
 
 ## Architecture
